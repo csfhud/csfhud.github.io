@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Countdown SPM 2026</title>
+
+
+    <!-- ==============================
+         GOOGLE FONTS
+    =============================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ==============================
+         CSS
+    =============================== -->
+
+    <style>
+
+        /* =================================
+           RESET
+        ================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =================================
+           HTML
+        ================================= */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        /* =================================
+           BODY
+        ================================= */
+
+        body {
+
+            min-height: 100vh;
+
+            font-family: 'Poppins', sans-serif;
+
+            color: white;
+
+        
+
+            background-image: url("school.jpg");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+
+            position: relative;
+        }
+
+
+        /* =================================
+           BLUE OVERLAY
+        ================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            /*
+             * Change the last number
+             * to adjust transparency.
+             *
+             * 0.78 = quite strong
+             * 0.60 = more transparent
+             * 0.90 = darker
+             */
+
+            background: rgba(213, 173, 11, 0.78);
+
+            z-index: -1;
+        }
+
+
+        /* =================================
+           MAIN CONTAINER
+        ================================= */
+
+        .container {
+
+            width: 100%;
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 30px 20px 60px;
+
+            text-align: center;
+        }
+
+
+        /* =================================
+           HEADER
+        ================================= */
+
+        .header {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =================================
+           SCHOOL LOGO
+        ================================= */
+
+        .school-logo {
+
+            width: 125px;
+
+            height: 125px;
+
+            object-fit: contain;
+
+            margin-bottom: 12px;
+
+            /*
+             * Adds a small shadow around
+             * the logo.
+             */
+
+            filter:
+                drop-shadow(
+                    2px 2px 4px
+                    rgba(0, 0, 0, 0.5)
+                );
+        }
+
+
+        /* =================================
+           SCHOOL / ORGANISATION NAME
+        ================================= */
+
+        .header h1 {
+
+            font-family: 'Pacifico', cursive;
+
+            font-size:
+                clamp(27px, 5vw, 45px);
+
+            line-height: 1.3;
+
+            text-shadow:
+                3px 3px 5px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* =================================
+           MAIN TITLE
+        ================================= */
+
+        .header h2 {
+
+            font-family: 'Pacifico', cursive;
+
+            font-size:
+                clamp(32px, 6vw, 55px);
+
+            line-height: 1.3;
+
+            margin-top: 5px;
+
+            text-shadow:
+                3px 3px 5px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* =================================
+           SCHEDULE TITLE
+        ================================= */
+
+        .schedule-title {
+
+            font-family: 'Pacifico', cursive;
+
+            font-size:
+                clamp(26px, 5vw, 40px);
+
+            margin-top: 25px;
+
+            margin-bottom: 40px;
+
+            text-decoration: underline;
+
+            text-shadow:
+                3px 3px 5px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* =================================
+           COUNTDOWN SECTION
+        ================================= */
+
+        .countdown-section {
+
+            margin-bottom: 42px;
+        }
+
+
+        /* =================================
+           EXAM NAME
+        ================================= */
+
+        .exam-name {
+
+            font-family: 'Pacifico', cursive;
+
+            font-size:
+                clamp(25px, 5vw, 40px);
+
+            line-height: 1.3;
+
+            margin-bottom: 16px;
+
+            text-shadow:
+
+                2px 2px 0px
+                rgba(70, 70, 70, 0.8),
+
+                3px 3px 6px
+                rgba(0, 0, 0, 0.5);
+        }
+
+
+        /* =================================
+           COUNTDOWN BOX
+        ================================= */
+
+        .countdown {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            width: 100%;
+
+            max-width: 470px;
+
+            margin: auto;
+
+            padding: 18px 10px 10px;
+
+            /*
+             * Transparent box
+             */
+
+            background:
+                rgba(255, 255, 255, 0.05);
+
+            /*
+             * Thin border
+             */
+
+            border:
+                1px solid
+                rgba(255, 255, 255, 0.5);
+
+            /*
+             * Slight glass effect
+             */
+
+            backdrop-filter: blur(2px);
+
+            -webkit-backdrop-filter: blur(2px);
+        }
+
+
+        /* =================================
+           TIME NUMBERS
+        ================================= */
+
+        .time {
+
+            font-size:
+                clamp(30px, 6vw, 55px);
+
+            font-weight: 400;
+
+            line-height: 1;
+
+            letter-spacing: 1px;
+
+            text-shadow:
+                2px 2px 4px
+                rgba(0, 0, 0, 0.3);
+        }
+
+
+        /* =================================
+           TIME LABEL
+        ================================= */
+
+        .label {
+
+            font-size:
+                clamp(10px, 2vw, 15px);
+
+            margin-top: 11px;
+
+            font-weight: 400;
+
+            opacity: 0.95;
+        }
+
+
+        /* =================================
+           FINISHED MESSAGE
+        ================================= */
+
+        .finished {
+
+            font-family: 'Pacifico', cursive;
+
+            font-size: 20px;
+
+            margin-top: 5px;
+        }
+
+
+        /* =================================
+           FOOTER
+        ================================= */
+
+        .footer {
+
+            margin-top: 55px;
+
+            font-size: 13px;
+
+            opacity: 0.8;
+        }
+
+
+        /* =================================
+           TABLET
+        ================================= */
+
+        @media (max-width: 768px) {
+
+            .container {
+
+                padding:
+                    25px 15px 50px;
+            }
+
+
+            .school-logo {
+
+                width: 105px;
+
+                height: 105px;
+            }
+
+
+            .countdown-section {
+
+                margin-bottom: 35px;
+            }
+
+        }
+
+
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 500px) {
+
+            .container {
+
+                padding:
+                    20px 10px 40px;
+            }
+
+
+            .school-logo {
+
+                width: 90px;
+
+                height: 90px;
+
+                margin-bottom: 8px;
+            }
+
+
+            .header h1 {
+
+                font-size: 25px;
+            }
+
+
+            .header h2 {
+
+                font-size: 32px;
+            }
+
+
+            .schedule-title {
+
+                font-size: 27px;
+
+                margin-bottom: 32px;
+            }
+
+
+            .exam-name {
+
+                font-size: 26px;
+            }
+
+
+            .countdown {
+
+                padding:
+                    14px 4px 8px;
+            }
+
+
+            .time {
+
+                font-size: 28px;
+
+                letter-spacing: 0;
+            }
+
+
+            .label {
+
+                font-size: 9px;
+
+                margin-top: 9px;
+            }
+
+        }
+
+
+        /* =================================
+           VERY SMALL PHONE
+        ================================= */
+
+        @media (max-width: 350px) {
+
+            .time {
+
+                font-size: 23px;
+            }
+
+
+            .label {
+
+                font-size: 8px;
+            }
+
+
+            .exam-name {
+
+                font-size: 23px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =================================
+         MAIN CONTENT
+    ================================= -->
+
+    <div class="container">
+
+
+        <!-- =================================
+             HEADER
+        ================================= -->
+
+        <header class="header">
+
+
+            <!-- SCHOOL LOGO -->
+
+            <!--
+                Put your logo in the same
+                folder and name it:
+
+                logo.png
+            -->
+
+            <img
+                src="logo.png"
+                alt="Logo Sekolah"
+                class="school-logo"
+            >
+
+
+            <!-- ORGANISATION / SCHOOL NAME -->
+
+            <h1>
+                Unit Bimbingan Kaunseling
+            </h1>
+
+
+            <!-- MAIN TITLE -->
+
+            <h2>
+                Countdown SPM 2026
+            </h2>
+
+        </header>
+
+
+
+        <!-- =================================
+             SCHEDULE TITLE
+        ================================== -->
+
+        <h2 class="schedule-title">
+            Jadual Peperiksaan SPM
+        </h2>
+
+
+
+        <!-- ==================================================
+             1. UJIAN BERTUTUR BAHASA MELAYU
+
+             Official:
+             26 - 29 October 2026
+
+             Countdown starts from:
+             26 October 2026
+             8:00 AM
+        =================================================== -->
+
+        <section class="countdown-section">
+
+
+            <h3 class="exam-name">
+                Ujian Bertutur Bahasa Melayu
+            </h3>
+
+
+            <div
+                class="countdown"
+                data-date="2026-10-26T08:00:00"
+            >
+
+
+                <div>
+
+                    <div class="time days">
+                        00
+                    </div>
+
+                    <div class="label">
+                        HARI
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time hours">
+                        00
+                    </div>
+
+                    <div class="label">
+                        JAM
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time minutes">
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINIT
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time seconds">
+                        00
+                    </div>
+
+                    <div class="label">
+                        SAAT
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             2. UJIAN BERTUTUR BAHASA INGGERIS
+
+             Official:
+             2 - 5 November 2026
+
+             Countdown starts from:
+             2 November 2026
+             8:00 AM
+        =================================================== -->
+
+        <section class="countdown-section">
+
+
+            <h3 class="exam-name">
+                Ujian Bertutur Bahasa Inggeris
+            </h3>
+
+
+            <div
+                class="countdown"
+                data-date="2026-11-02T08:00:00"
+            >
+
+
+                <div>
+
+                    <div class="time days">
+                        00
+                    </div>
+
+                    <div class="label">
+                        HARI
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time hours">
+                        00
+                    </div>
+
+                    <div class="label">
+                        JAM
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time minutes">
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINIT
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time seconds">
+                        00
+                    </div>
+
+                    <div class="label">
+                        SAAT
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             3. UJIAN AMALI SAINS
+
+             Countdown starts from the FIRST
+             Amali Sains test:
+
+             16 November 2026
+             8:05 AM
+
+             First practical paper:
+             Fizik Kertas 3
+        =================================================== -->
+
+        <section class="countdown-section">
+
+
+            <h3 class="exam-name">
+                Ujian Amali Sains
+            </h3>
+
+
+            <div
+                class="countdown"
+                data-date="2026-11-16T08:05:00"
+            >
+
+
+                <div>
+
+                    <div class="time days">
+                        00
+                    </div>
+
+                    <div class="label">
+                        HARI
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time hours">
+                        00
+                    </div>
+
+                    <div class="label">
+                        JAM
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time minutes">
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINIT
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time seconds">
+                        00
+                    </div>
+
+                    <div class="label">
+                        SAAT
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             4. UJIAN MENDENGAR BAHASA MELAYU
+
+             23 November 2026
+             9:00 AM
+        =================================================== -->
+
+        <section class="countdown-section">
+
+
+            <h3 class="exam-name">
+                Ujian Mendengar Bahasa Melayu
+            </h3>
+
+
+            <div
+                class="countdown"
+                data-date="2026-11-23T09:00:00"
+            >
+
+
+                <div>
+
+                    <div class="time days">
+                        00
+                    </div>
+
+                    <div class="label">
+                        HARI
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time hours">
+                        00
+                    </div>
+
+                    <div class="label">
+                        JAM
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time minutes">
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINIT
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time seconds">
+                        00
+                    </div>
+
+                    <div class="label">
+                        SAAT
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             5. UJIAN MENDENGAR BAHASA INGGERIS
+
+             24 November 2026
+             9:00 AM
+        =================================================== -->
+
+        <section class="countdown-section">
+
+
+            <h3 class="exam-name">
+                Ujian Mendengar Bahasa Inggeris
+            </h3>
+
+
+            <div
+                class="countdown"
+                data-date="2026-11-24T09:00:00"
+            >
+
+
+                <div>
+
+                    <div class="time days">
+                        00
+                    </div>
+
+                    <div class="label">
+                        HARI
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time hours">
+                        00
+                    </div>
+
+                    <div class="label">
+                        JAM
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time minutes">
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINIT
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time seconds">
+                        00
+                    </div>
+
+                    <div class="label">
+                        SAAT
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             6. PEPERIKSAAN BERTULIS
+
+             Countdown starts from the FIRST
+             written examination:
+
+             23 November 2026
+             10:45 AM
+
+             First paper:
+             Bahasa Melayu Kertas 1
+        =================================================== -->
+
+        <section class="countdown-section">
+
+
+            <h3 class="exam-name">
+                Peperiksaan Bertulis
+            </h3>
+
+
+            <div
+                class="countdown"
+                data-date="2026-11-23T10:45:00"
+            >
+
+
+                <div>
+
+                    <div class="time days">
+                        00
+                    </div>
+
+                    <div class="label">
+                        HARI
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time hours">
+                        00
+                    </div>
+
+                    <div class="label">
+                        JAM
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time minutes">
+                        00
+                    </div>
+
+                    <div class="label">
+                        MINIT
+                    </div>
+
+                </div>
+
+
+
+                <div>
+
+                    <div class="time seconds">
+                        00
+                    </div>
+
+                    <div class="label">
+                        SAAT
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================
+             FOOTER
+        ================================== -->
+
+        <div class="footer">
+
+            Countdown SPM 2026
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script>
+
+
+        /* =================================
+           UPDATE ALL COUNTDOWNS
+        ================================= */
+
+        function updateCountdowns() {
+
+
+            /*
+             * Find every element with
+             * the class "countdown".
+             */
+
+            const countdowns =
+                document.querySelectorAll(
+                    ".countdown"
+                );
+
+
+            /*
+             * Loop through every
+             * countdown.
+             */
+
+            countdowns.forEach(
+                countdown => {
+
+
+                    /*
+                     * Get the target date
+                     * from data-date.
+                     */
+
+                    const targetDate =
+                        new Date(
+                            countdown.dataset.date
+                        ).getTime();
+
+
+                    /*
+                     * Get the current date/time.
+                     */
+
+                    const currentDate =
+                        new Date().getTime();
+
+
+                    /*
+                     * Calculate the
+                     * remaining time.
+                     */
+
+                    const difference =
+                        targetDate -
+                        currentDate;
+
+
+
+                    /* ==========================
+                       EXAMINATION HAS STARTED
+                    ========================== */
+
+                    if (difference <= 0) {
+
+
+                        countdown.querySelector(
+                            ".days"
+                        ).textContent = "00";
+
+
+                        countdown.querySelector(
+                            ".hours"
+                        ).textContent = "00";
+
+
+                        countdown.querySelector(
+                            ".minutes"
+                        ).textContent = "00";
+
+
+                        countdown.querySelector(
+                            ".seconds"
+                        ).textContent = "00";
+
+
+                        return;
+
+                    }
+
+
+
+                    /* ==========================
+                       CALCULATE DAYS
+                    ========================== */
+
+                    const days =
+                        Math.floor(
+                            difference /
+                            (
+                                1000 *
+                                60 *
+                                60 *
+                                24
+                            )
+                        );
+
+
+
+                    /* ==========================
+                       CALCULATE HOURS
+                    ========================== */
+
+                    const hours =
+                        Math.floor(
+                            (
+                                difference /
+                                (
+                                    1000 *
+                                    60 *
+                                    60
+                                )
+                            ) % 24
+                        );
+
+
+
+                    /* ==========================
+                       CALCULATE MINUTES
+                    ========================== */
+
+                    const minutes =
+                        Math.floor(
+                            (
+                                difference /
+                                (
+                                    1000 *
+                                    60
+                                )
+                            ) % 60
+                        );
+
+
+
+                    /* ==========================
+                       CALCULATE SECONDS
+                    ========================== */
+
+                    const seconds =
+                        Math.floor(
+                            (
+                                difference /
+                                1000
+                            ) % 60
+                        );
+
+
+
+                    /* ==========================
+                       DISPLAY DAYS
+                    ========================== */
+
+                    countdown.querySelector(
+                        ".days"
+                    ).textContent =
+                        String(days)
+                            .padStart(2, "0");
+
+
+
+                    /* ==========================
+                       DISPLAY HOURS
+                    ========================== */
+
+                    countdown.querySelector(
+                        ".hours"
+                    ).textContent =
+                        String(hours)
+                            .padStart(2, "0");
+
+
+
+                    /* ==========================
+                       DISPLAY MINUTES
+                    ========================== */
+
+                    countdown.querySelector(
+                        ".minutes"
+                    ).textContent =
+                        String(minutes)
+                            .padStart(2, "0");
+
+
+
+                    /* ==========================
+                       DISPLAY SECONDS
+                    ========================== */
+
+                    countdown.querySelector(
+                        ".seconds"
+                    ).textContent =
+                        String(seconds)
+                            .padStart(2, "0");
+
+
+                }
+            );
+
+        }
+
+
+
+        /* =================================
+           RUN WHEN PAGE LOADS
+        ================================= */
+
+        updateCountdowns();
+
+
+
+        /* =================================
+           UPDATE EVERY SECOND
+        ================================= */
+
+        setInterval(
+            updateCountdowns,
+            1000
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
