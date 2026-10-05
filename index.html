@@ -877,20 +877,19 @@ function updateCountdowns() {
 
             /* Exam started */
 
-            if (difference <= 0) {
-
-                box.querySelector(".days").textContent = "00";
-                box.querySelector(".hours").textContent = "00";
-                box.querySelector(".minutes").textContent = "00";
-                box.querySelector(".seconds").textContent = "00";
-
-                status.textContent =
-                    "🎉 Peperiksaan telah bermula!";
-
-                status.style.display = "block";
-
-                return;
-            }
+           if (difference <= 0) {
+              box.querySelector(".days").textContent = "00";
+              box.querySelector(".hours").textContent = "00";
+              box.querySelector(".minutes").textContent = "00";
+              box.querySelector(".seconds").textContent = "00";
+              
+              status.textContent =
+                 "🎉 Peperiksaan telah bermula!";
+              
+              status.style.display = "block";\
+              
+              return;
+}
 
 
             /* Calculate time */
