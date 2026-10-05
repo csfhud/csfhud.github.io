@@ -3,643 +3,811 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Countdown SPM 2026</title>
+<title>Countdown SPM 2026</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap"
-        rel="stylesheet"
-    >
+<!-- Google Fonts -->
 
-    <style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-        /* =========================================
-           GENERAL
-        ========================================= */
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<link
+href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap"
+rel="stylesheet"
+>
 
-        html {
-            scroll-behavior: smooth;
-        }
 
-        body {
-            min-height: 100vh;
+<style>
 
-            font-family: "Baloo 2", sans-serif;
+/* =========================================
+   GENERAL
+========================================= */
 
-            color: white;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0, 183, 255, 0.78),
-                    rgba(76, 0, 255, 0.68),
-                    rgba(255, 80, 180, 0.55)
-                ),
-                url("school.jpg") center / cover fixed no-repeat;
 
-            overflow-x: hidden;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
 
-        /* =========================================
-           DECORATIVE BACKGROUND
-        ========================================= */
+body {
 
-        .background-decoration {
-            position: fixed;
+    min-height: 100vh;
 
-            inset: 0;
+    font-family: "Baloo 2", sans-serif;
 
-            pointer-events: none;
+    color: white;
 
-            overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 183, 255, 0.78),
+            rgba(76, 0, 255, 0.68),
+            rgba(255, 80, 180, 0.55)
+        ),
+        url("school.jpg") center / cover fixed no-repeat;
 
-            z-index: 0;
-        }
+    overflow-x: hidden;
+}
 
 
-        .circle {
-            position: absolute;
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
 
-            border-radius: 50%;
+.background-decoration {
 
-            filter: blur(2px);
+    position: fixed;
 
-            opacity: 0.35;
+    inset: 0;
 
-            animation: float 8s ease-in-out infinite;
-        }
+    pointer-events: none;
 
+    overflow: hidden;
 
-        .circle.one {
-            width: 180px;
-            height: 180px;
+    z-index: 0;
+}
 
-            background: #ffd93d;
 
-            top: 5%;
-            left: -50px;
-        }
+.circle {
 
+    position: absolute;
 
-        .circle.two {
-            width: 130px;
-            height: 130px;
+    border-radius: 50%;
 
-            background: #ff6bcb;
+    filter: blur(2px);
 
-            top: 30%;
-            right: -30px;
+    opacity: 0.35;
 
-            animation-delay: 1s;
-        }
+    animation: float 8s ease-in-out infinite;
+}
 
 
-        .circle.three {
-            width: 220px;
-            height: 220px;
+.circle.one {
 
-            background: #6bffb8;
+    width: 180px;
+    height: 180px;
 
-            bottom: 10%;
-            left: -80px;
+    background: #ffd93d;
 
-            animation-delay: 2s;
-        }
+    top: 5%;
+    left: -50px;
+}
 
 
-        .circle.four {
-            width: 150px;
-            height: 150px;
+.circle.two {
 
-            background: #ff9f43;
+    width: 130px;
+    height: 130px;
 
-            bottom: 30%;
-            right: -50px;
+    background: #ff6bcb;
 
-            animation-delay: 3s;
-        }
+    top: 30%;
+    right: -30px;
 
+    animation-delay: 1s;
+}
 
-        @keyframes float {
 
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
+.circle.three {
 
-            50% {
-                transform: translateY(-30px) rotate(15deg);
-            }
+    width: 220px;
+    height: 220px;
 
-        }
+    background: #6bffb8;
 
+    bottom: 10%;
+    left: -80px;
 
-        /* =========================================
-           MAIN CONTAINER
-        ========================================= */
+    animation-delay: 2s;
+}
 
-        .container {
-            position: relative;
 
-            z-index: 1;
+.circle.four {
 
-            width: 100%;
+    width: 150px;
+    height: 150px;
 
-            max-width: 900px;
+    background: #ff9f43;
 
-            margin: auto;
+    bottom: 30%;
+    right: -50px;
 
-            padding: 30px 20px 70px;
+    animation-delay: 3s;
+}
 
-            text-align: center;
-        }
 
+@keyframes float {
 
-        /* =========================================
-           HEADER
-        ========================================= */
+    0%, 100% {
 
-        .header {
-            display: flex;
+        transform:
+            translateY(0)
+            rotate(0deg);
 
-            flex-direction: column;
+    }
 
-            align-items: center;
+    50% {
 
-            animation: fadeDown 1s ease;
-        }
+        transform:
+            translateY(-30px)
+            rotate(15deg);
 
+    }
 
-        @keyframes fadeDown {
+}
 
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+/* =========================================
+   MAIN CONTAINER
+========================================= */
 
-        }
+.container {
 
+    position: relative;
 
-        /* =========================================
-           SCHOOL LOGO
-        ========================================= */
+    z-index: 1;
 
-        .logo-container {
-            width: 145px;
-            height: 145px;
+    width: 100%;
 
-            background: rgba(255,255,255,0.95);
+    max-width: 900px;
 
-            border-radius: 50%;
+    margin: auto;
 
-            display: flex;
+    padding: 30px 20px 70px;
 
-            align-items: center;
+    text-align: center;
+}
 
-            justify-content: center;
 
-            padding: 12px;
+/* =========================================
+   HEADER
+========================================= */
 
-            margin-bottom: 18px;
+.header {
 
-            box-shadow:
-                0 10px 30px rgba(0,0,0,0.35),
-                0 0 0 6px rgba(255,255,255,0.25);
+    display: flex;
 
-            animation: logoFloat 4s ease-in-out infinite;
-        }
+    flex-direction: column;
 
+    align-items: center;
 
-        .logo-container img {
-            width: 100%;
-            height: 100%;
+    animation: fadeDown 1s ease;
+}
 
-            object-fit: contain;
 
-            border-radius: 50%;
-        }
+@keyframes fadeDown {
 
+    from {
 
-        @keyframes logoFloat {
+        opacity: 0;
 
-            0%, 100% {
-                transform: translateY(0);
-            }
+        transform:
+            translateY(-30px);
 
-            50% {
-                transform: translateY(-8px);
-            }
+    }
 
-        }
+    to {
 
+        opacity: 1;
 
-        /* =========================================
-           TITLE
-        ========================================= */
+        transform:
+            translateY(0);
 
-        .header h1 {
-            font-family: "Pacifico", cursive;
+    }
 
-            font-size: clamp(25px, 5vw, 42px);
+}
 
-            line-height: 1.3;
 
-            text-shadow:
-                3px 4px 0 rgba(0,0,0,0.25),
-                0 4px 15px rgba(0,0,0,0.3);
+/* =========================================
+   SCHOOL LOGO
+========================================= */
 
-            margin-bottom: 5px;
-        }
+.logo-container {
 
+    width: 145px;
+    height: 145px;
 
-        .header h2 {
-            font-family: "Pacifico", cursive;
+    background:
+        rgba(255,255,255,0.95);
 
-            font-size: clamp(38px, 7vw, 62px);
+    border-radius: 50%;
 
-            line-height: 1.2;
+    display: flex;
 
-            background: linear-gradient(
-                90deg,
-                #fff,
-                #ffe66d,
-                #fff
-            );
+    align-items: center;
 
-            -webkit-background-clip: text;
+    justify-content: center;
 
-            -webkit-text-fill-color: transparent;
+    padding: 12px;
 
-            filter: drop-shadow(3px 4px 2px rgba(0,0,0,0.35));
-        }
+    margin-bottom: 18px;
 
+    box-shadow:
 
-        /* =========================================
-           SCHEDULE TITLE
-        ========================================= */
+        0 10px 30px
+        rgba(0,0,0,0.35),
 
-        .schedule-title {
-            display: inline-block;
+        0 0 0 6px
+        rgba(255,255,255,0.25);
 
-            font-family: "Pacifico", cursive;
+    animation:
+        logoFloat 4s ease-in-out infinite;
+}
 
-            font-size: clamp(27px, 5vw, 40px);
 
-            margin: 35px 0 45px;
+.logo-container img {
 
-            padding: 8px 25px;
+    width: 100%;
 
-            background: rgba(255,255,255,0.16);
+    height: 100%;
 
-            border-radius: 30px;
+    object-fit: contain;
 
-            border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 50%;
+}
 
-            box-shadow:
-                0 8px 25px rgba(0,0,0,0.2),
-                inset 0 0 20px rgba(255,255,255,0.1);
 
-            text-shadow: 3px 3px 3px rgba(0,0,0,0.35);
-        }
+@keyframes logoFloat {
 
+    0%, 100% {
 
-        /* =========================================
-           COUNTDOWN SECTION
-        ========================================= */
+        transform:
+            translateY(0);
 
-        .countdown-section {
-            margin-bottom: 45px;
+    }
 
-            animation: fadeUp 0.8s ease both;
-        }
+    50% {
 
+        transform:
+            translateY(-8px);
 
-        @keyframes fadeUp {
+    }
 
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
 
-        }
+/* =========================================
+   HEADER TITLE
+========================================= */
 
+.header h1 {
 
-        /* =========================================
-           EXAM TITLES
-        ========================================= */
+    font-family:
+        "Pacifico",
+        cursive;
 
-        .exam-name {
-            font-family: "Pacifico", cursive;
+    font-size:
+        clamp(25px, 5vw, 42px);
 
-            font-size: clamp(25px, 5vw, 39px);
+    line-height: 1.3;
 
-            line-height: 1.3;
+    text-shadow:
 
-            margin-bottom: 18px;
+        3px 4px 0
+        rgba(0,0,0,0.25),
 
-            color: white;
+        0 4px 15px
+        rgba(0,0,0,0.3);
 
-            text-shadow:
-                3px 3px 0 rgba(0,0,0,0.35),
-                0 5px 10px rgba(0,0,0,0.3);
-        }
+    margin-bottom: 5px;
+}
 
 
-        /* =========================================
-           COUNTDOWN BOX
-        ========================================= */
+.header h2 {
 
-        .countdown {
-            width: 100%;
+    font-family:
+        "Pacifico",
+        cursive;
 
-            max-width: 520px;
+    font-size:
+        clamp(38px, 7vw, 62px);
 
-            margin: auto;
+    line-height: 1.2;
 
-            display: grid;
+    background:
 
-            grid-template-columns: repeat(4, 1fr);
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffe66d,
+            #fff
+        );
 
-            gap: 8px;
+    -webkit-background-clip:
+        text;
 
-            padding: 18px;
+    -webkit-text-fill-color:
+        transparent;
 
-            border-radius: 25px;
+    filter:
+        drop-shadow(
+            3px 4px 2px
+            rgba(0,0,0,0.35)
+        );
+}
 
-            background: rgba(255,255,255,0.17);
 
-            border: 2px solid rgba(255,255,255,0.45);
+/* =========================================
+   SCHEDULE TITLE
+========================================= */
 
-            backdrop-filter: blur(10px);
+.schedule-title {
 
-            box-shadow:
-                0 15px 35px rgba(0,0,0,0.25),
-                inset 0 0 25px rgba(255,255,255,0.08);
+    display: inline-block;
 
-            transition: transform 0.3s ease;
-        }
+    font-family:
+        "Pacifico",
+        cursive;
 
+    font-size:
+        clamp(27px, 5vw, 40px);
 
-        .countdown:hover {
-            transform: translateY(-5px) scale(1.015);
-        }
+    margin:
+        35px 0 45px;
 
+    padding:
+        8px 25px;
 
-        /* =========================================
-           TIME NUMBERS
-        ========================================= */
+    background:
+        rgba(255,255,255,0.16);
 
-        .time {
-            font-size: clamp(30px, 6vw, 55px);
+    border-radius:
+        30px;
 
-            font-weight: 700;
+    border:
+        2px solid
+        rgba(255,255,255,0.5);
 
-            line-height: 1;
+    box-shadow:
 
-            color: white;
+        0 8px 25px
+        rgba(0,0,0,0.2),
 
-            text-shadow:
-                2px 3px 0 rgba(0,0,0,0.25);
-        }
+        inset 0 0 20px
+        rgba(255,255,255,0.1);
 
+    text-shadow:
+        3px 3px 3px
+        rgba(0,0,0,0.35);
+}
 
-        /* =========================================
-           LABELS
-        ========================================= */
 
-        .label {
-            margin-top: 9px;
+/* =========================================
+   COUNTDOWN SECTION
+========================================= */
 
-            font-size: clamp(10px, 2vw, 14px);
+.countdown-section {
 
-            font-weight: 600;
+    margin-bottom: 45px;
 
-            letter-spacing: 1px;
+    animation:
+        fadeUp 0.8s ease both;
+}
 
-            opacity: 0.95;
-        }
 
+@keyframes fadeUp {
 
-        /* =========================================
-           DIFFERENT COUNTDOWN COLOURS
-        ========================================= */
+    from {
 
-        .countdown-section:nth-of-type(1) .countdown {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255, 105, 180, 0.45),
-                    rgba(255, 77, 109, 0.35)
-                );
-        }
+        opacity: 0;
 
+        transform:
+            translateY(30px);
 
-        .countdown-section:nth-of-type(2) .countdown {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255, 193, 7, 0.45),
-                    rgba(255, 152, 0, 0.35)
-                );
-        }
+    }
 
+    to {
 
-        .countdown-section:nth-of-type(3) .countdown {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0, 230, 118, 0.45),
-                    rgba(0, 188, 212, 0.35)
-                );
-        }
+        opacity: 1;
 
+        transform:
+            translateY(0);
 
-        .countdown-section:nth-of-type(4) .countdown {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(156, 39, 176, 0.45),
-                    rgba(63, 81, 181, 0.35)
-                );
-        }
+    }
 
+}
 
-        .countdown-section:nth-of-type(5) .countdown {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0, 188, 212, 0.45),
-                    rgba(3, 169, 244, 0.35)
-                );
-        }
 
+/* =========================================
+   EXAM TITLES
+========================================= */
 
-        .countdown-section:nth-of-type(6) .countdown {
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255, 87, 34, 0.45),
-                    rgba(233, 30, 99, 0.35)
-                );
-        }
+.exam-name {
 
+    font-family:
+        "Pacifico",
+        cursive;
 
-        /* =========================================
-           STATUS
-        ========================================= */
+    font-size:
+        clamp(25px, 5vw, 39px);
 
-        .status {
-            display: none;
+    line-height: 1.3;
 
-            margin-top: 12px;
+    margin-bottom: 18px;
 
-            font-family: "Pacifico", cursive;
+    color: white;
 
-            font-size: 21px;
+    text-shadow:
 
-            color: #ffe66d;
+        3px 3px 0
+        rgba(0,0,0,0.35),
 
-            text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
-        }
+        0 5px 10px
+        rgba(0,0,0,0.3);
+}
 
 
-        /* =========================================
-           FOOTER
-        ========================================= */
+/* =========================================
+   COUNTDOWN BOX
+========================================= */
 
-        .footer {
-            margin-top: 60px;
+.countdown {
 
-            padding: 12px 20px;
+    width: 100%;
 
-            display: inline-block;
+    max-width: 520px;
 
-            background: rgba(255,255,255,0.12);
+    min-height: 120px;
 
-            border-radius: 30px;
+    margin: auto;
 
-            font-size: 14px;
+    display: grid;
 
-            opacity: 0.9;
-        }
+    grid-template-columns:
+        repeat(4, 1fr);
 
+    gap: 8px;
 
-        /* =========================================
-           MOBILE
-        ========================================= */
+    padding: 18px;
 
-        @media (max-width: 600px) {
+    border-radius: 25px;
 
-            .container {
-                padding: 25px 12px 50px;
-            }
+    background:
+        rgba(255,255,255,0.17);
 
+    border:
+        2px solid
+        rgba(255,255,255,0.45);
 
-            .logo-container {
-                width: 110px;
-                height: 110px;
-            }
+    backdrop-filter:
+        blur(10px);
 
+    box-shadow:
 
-            .header h1 {
-                font-size: 24px;
-            }
+        0 15px 35px
+        rgba(0,0,0,0.25),
 
+        inset 0 0 25px
+        rgba(255,255,255,0.08);
 
-            .header h2 {
-                font-size: 36px;
-            }
+    transition:
+        transform 0.3s ease;
+}
 
 
-            .schedule-title {
-                font-size: 26px;
+.countdown:hover {
 
-                margin-top: 28px;
-                margin-bottom: 35px;
+    transform:
+        translateY(-5px)
+        scale(1.015);
+}
 
-                padding: 7px 18px;
-            }
 
+/* =========================================
+   TIME NUMBERS
+========================================= */
 
-            .exam-name {
-                font-size: 25px;
-            }
+.time {
 
+    font-size:
+        clamp(30px, 6vw, 55px);
 
-            .countdown {
-                padding: 14px 6px;
+    font-weight: 700;
 
-                gap: 2px;
+    line-height: 1;
 
-                border-radius: 20px;
-            }
+    color: white;
 
+    text-shadow:
+        2px 3px 0
+        rgba(0,0,0,0.25);
+}
 
-            .time {
-                font-size: 28px;
-            }
 
+/* =========================================
+   LABELS
+========================================= */
 
-            .label {
-                font-size: 9px;
+.label {
 
-                letter-spacing: 0;
-            }
+    margin-top: 9px;
 
-        }
+    font-size:
+        clamp(10px, 2vw, 14px);
 
+    font-weight: 600;
 
-        /* =========================================
-           VERY SMALL PHONES
-        ========================================= */
+    letter-spacing: 1px;
 
-        @media (max-width: 350px) {
+    opacity: 0.95;
+}
 
-            .time {
-                font-size: 23px;
-            }
 
+/* =========================================
+   COUNTDOWN COLOURS
+========================================= */
 
-            .exam-name {
-                font-size: 22px;
-            }
+.countdown-section:nth-of-type(1)
+.countdown {
 
+    background:
 
-            .header h1 {
-                font-size: 21px;
-            }
+        linear-gradient(
+            135deg,
+            rgba(255,105,180,0.45),
+            rgba(255,77,109,0.35)
+        );
+}
 
 
-            .header h2 {
-                font-size: 31px;
-            }
+.countdown-section:nth-of-type(2)
+.countdown {
 
-        }
+    background:
 
-    </style>
+        linear-gradient(
+            135deg,
+            rgba(255,193,7,0.45),
+            rgba(255,152,0,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(3)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,230,118,0.45),
+            rgba(0,188,212,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(4)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(156,39,176,0.45),
+            rgba(63,81,181,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(5)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,188,212,0.45),
+            rgba(3,169,244,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(6)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,87,34,0.45),
+            rgba(233,30,99,0.35)
+        );
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+
+    display: none;
+
+    margin-top: 12px;
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size: 21px;
+
+    color: #ffe66d;
+
+    text-shadow:
+        2px 2px 3px
+        rgba(0,0,0,0.4);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    margin-top: 60px;
+
+    padding:
+        12px 20px;
+
+    display:
+        inline-block;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border-radius:
+        30px;
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding:
+            25px 12px 50px;
+    }
+
+
+    .logo-container {
+
+        width: 110px;
+
+        height: 110px;
+    }
+
+
+    .header h1 {
+
+        font-size: 24px;
+    }
+
+
+    .header h2 {
+
+        font-size: 36px;
+    }
+
+
+    .schedule-title {
+
+        font-size: 26px;
+
+        margin-top: 28px;
+
+        margin-bottom: 35px;
+
+        padding:
+            7px 18px;
+    }
+
+
+    .exam-name {
+
+        font-size: 25px;
+    }
+
+
+    .countdown {
+
+        padding:
+            14px 6px;
+
+        gap: 2px;
+
+        border-radius:
+            20px;
+    }
+
+
+    .time {
+
+        font-size: 28px;
+    }
+
+
+    .label {
+
+        font-size: 9px;
+
+        letter-spacing: 0;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 350px) {
+
+    .time {
+
+        font-size: 23px;
+    }
+
+
+    .exam-name {
+
+        font-size: 22px;
+    }
+
+
+    .header h1 {
+
+        font-size: 21px;
+    }
+
+
+    .header h2 {
+
+        font-size: 31px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -647,379 +815,1935 @@
 <body>
 
 
-    <!-- Background Decorations -->
+<!-- =========================================
+     BACKGROUND DECORATION
+========================================= -->
 
-    <div class="background-decoration">
+<div class="background-decoration">
 
-        <div class="circle one"></div>
+    <div class="circle one"></div>
 
-        <div class="circle two"></div>
+    <div class="circle two"></div>
 
-        <div class="circle three"></div>
+    <div class="circle three"></div>
 
-        <div class="circle four"></div>
+    <div class="circle four"></div>
+
+</div>
+
+
+
+<!-- =========================================
+     MAIN CONTAINER
+========================================= -->
+
+<div class="container">
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+
+    <div class="logo-container">
+
+        <img
+            src="logo.png"
+            alt="Logo sekolah"
+        >
 
     </div>
 
 
+    <h1>
 
-    <div class="container">
+        Unit Bimbingan Kaunseling
+
+        <br>
+
+        SMK Saujana Indah
+
+    </h1>
 
 
-        <!-- =========================================
-             HEADER
-        ========================================= -->
+    <h2>
 
-        <header class="header">
+        Countdown SPM 2026
 
-            <div class="logo-container">
+    </h2>
 
-                <img
-                    src="logo.png"
-                    alt="Logo sekolah"
-                >
 
+</header>
+
+
+
+<!-- =========================================
+     SCHEDULE TITLE
+========================================= -->
+
+<h2 class="schedule-title">
+
+    Jadual Peperiksaan SPM
+
+</h2>
+
+
+
+<!-- =========================================
+     BM BERTUTUR
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Ujian Bertutur Bahasa Melayu
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-10-26T08:00:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     BI BERTUTUR
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Ujian Bertutur Bahasa Inggeris
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-11-02T08:00:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     AMALI SAINS
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Ujian Amali Sains
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-11-16T08:05:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     BM MENDENGAR
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Ujian Mendengar Bahasa Melayu
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-11-23T09:00:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     BI MENDENGAR
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Ujian Mendengar Bahasa Inggeris
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-11-24T09:00:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     WRITTEN EXAMINATION
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Peperiksaan Bertulis
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-11-23T10:45:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<div class="footer">
+
+    ✨ Semoga berjaya dalam SPM 2026! ✨
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     COUNTDOWN JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/*
+=========================================
+CREATE COUNTDOWN BOXES
+=========================================
+*/
+
+function createCountdown(box) {
+
+    box.innerHTML = `
+
+        <div>
+
+            <div class="time days">
+                00
             </div>
 
+            <div class="label">
+                HARI
+            </div>
 
-            <h1>
-                Unit Bimbingan Kaunseling
-                <br>
-                SMK Saujana Indah
-            </h1>
-
-
-            <h2>
-                Countdown SPM 2026
-            </h2>
-
-        </header>
-
-
-
-        <!-- =========================================
-             SCHEDULE TITLE
-        ========================================= -->
-
-        <h2 class="schedule-title">
-            Jadual Peperiksaan SPM
-        </h2>
-
-
-
-        <!-- =========================================
-             BM BERTUTUR
-        ========================================= -->
-
-        <section class="countdown-section">
-
-            <h3 class="exam-name">
-                Ujian Bertutur Bahasa Melayu
-            </h3>
-
-            <div
-                class="countdown"
-                data-date="2026-10-26T08:00:00+08:00"
-            ></div>
-
-            <div class="status"></div>
-
-        </section>
-
-
-
-        <!-- =========================================
-             BI BERTUTUR
-        ========================================= -->
-
-        <section class="countdown-section">
-
-            <h3 class="exam-name">
-                Ujian Bertutur Bahasa Inggeris
-            </h3>
-
-            <div
-                class="countdown"
-                data-date="2026-11-02T08:00:00+08:00"
-            ></div>
-
-            <div class="status"></div>
-
-        </section>
-
-
-
-        <!-- =========================================
-             AMALI SAINS
-        ========================================= -->
-
-        <section class="countdown-section">
-
-            <h3 class="exam-name">
-                Ujian Amali Sains
-            </h3>
-
-            <div
-                class="countdown"
-                data-date="2026-11-16T08:05:00+08:00"
-            ></div>
-
-            <div class="status"></div>
-
-        </section>
-
-
-
-        <!-- =========================================
-             BM MENDENGAR
-        ========================================= -->
-
-        <section class="countdown-section">
-
-            <h3 class="exam-name">
-                Ujian Mendengar Bahasa Melayu
-            </h3>
-
-            <div
-                class="countdown"
-                data-date="2026-11-23T09:00:00+08:00"
-            ></div>
-
-            <div class="status"></div>
-
-        </section>
-
-
-
-        <!-- =========================================
-             BI MENDENGAR
-        ========================================= -->
-
-        <section class="countdown-section">
-
-            <h3 class="exam-name">
-                Ujian Mendengar Bahasa Inggeris
-            </h3>
-
-            <div
-                class="countdown"
-                data-date="2026-11-24T09:00:00+08:00"
-            ></div>
-
-            <div class="status"></div>
-
-        </section>
-
-
-
-        <!-- =========================================
-             WRITTEN EXAMINATION
-        ========================================= -->
-
-        <section class="countdown-section">
-
-            <h3 class="exam-name">
-                Peperiksaan Bertulis
-            </h3>
-
-            <div
-                class="countdown"
-                data-date="2026-11-23T10:45:00+08:00"
-            ></div>
-
-            <div class="status"></div>
-
-        </section>
-
-
-
-        <div class="footer">
-            ✨ Semoga berjaya dalam SPM 2026! ✨
         </div>
 
 
+        <div>
+
+            <div class="time hours">
+                00
+            </div>
+
+            <div class="label">
+                JAM
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="time minutes">
+                00
+            </div>
+
+            <div class="label">
+                MINIT
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="time seconds">
+                00
+            </div>
+
+            <div class="label">
+                SAAT
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/*
+=========================================
+UPDATE COUNTDOWNS
+=========================================
+*/
+
+function updateCountdowns() {
+
+
+    document
+        .querySelectorAll(".countdown")
+        .forEach(function(box) {
+
+
+            /*
+            Get exam date
+            */
+
+            const target =
+                new Date(
+                    box.dataset.date
+                ).getTime();
+
+
+            /*
+            Get current time
+            */
+
+            const now =
+                Date.now();
+
+
+            /*
+            Subtract exactly one day
+            from the displayed countdown
+            */
+
+            const difference =
+                target -
+                now -
+                86400000;
+
+
+            /*
+            Find status message
+            */
+
+            const status =
+                box.nextElementSibling;
+
+
+
+            /*
+            =====================================
+            EXAM STARTED
+            =====================================
+            */
+
+            if (difference <= 0) {
+
+
+                box.querySelector(".days")
+                    .textContent = "00";
+
+
+                box.querySelector(".hours")
+                    .textContent = "00";
+
+
+                box.querySelector(".minutes")
+                    .textContent = "00";
+
+
+                box.querySelector(".seconds")
+                    .textContent = "00";
+
+
+                status.textContent =
+                    "🎉 Peperiksaan telah bermula!";
+
+
+                status.style.display =
+                    "block";
+
+
+                return;
+
+            }
+
+
+
+            /*
+            =====================================
+            CALCULATE DAYS
+            =====================================
+            */
+
+            const days =
+                Math.floor(
+                    difference /
+                    86400000
+                );
+
+
+
+            /*
+            =====================================
+            CALCULATE HOURS
+            =====================================
+            */
+
+            const hours =
+                Math.floor(
+                    (difference /
+                    3600000) % 24
+                );
+
+
+
+            /*
+            =====================================
+            CALCULATE MINUTES
+            =====================================
+            */
+
+            const minutes =
+                Math.floor(
+                    (difference /
+                    60000) % 60
+                );
+
+
+
+            /*
+            =====================================
+            CALCULATE SECONDS
+            =====================================
+            */
+
+            const seconds =
+                Math.floor(
+                    (difference /
+                    1000) % 60
+                );
+
+
+
+            /*
+            =====================================
+            DISPLAY DAYS
+            =====================================
+            */
+
+            box.querySelector(".days")
+                .textContent =
+                String(days)
+                    .padStart(2, "0");
+
+
+
+            /*
+            =====================================
+            DISPLAY HOURS
+            =====================================
+            */
+
+            box.querySelector(".hours")
+                .textContent =
+                String(hours)
+                    .padStart(2, "0");
+
+
+
+            /*
+            =====================================
+            DISPLAY MINUTES
+            =====================================
+            */
+
+            box.querySelector(".minutes")
+                .textContent =
+                String(minutes)
+                    .padStart(2, "0");
+
+
+
+            /*
+            =====================================
+            DISPLAY SECONDS
+            =====================================
+            */
+
+            box.querySelector(".seconds")
+                .textContent =
+                String(seconds)
+                    .padStart(2, "0");
+
+
+        });
+
+}
+
+
+
+/*
+=========================================
+CREATE ALL COUNTDOWN BOXES
+=========================================
+*/
+
+document
+    .querySelectorAll(".countdown")
+    .forEach(createCountdown);
+
+
+
+/*
+=========================================
+RUN IMMEDIATELY
+=========================================
+*/
+
+updateCountdowns();
+
+
+
+/*
+=========================================
+UPDATE EVERY SECOND
+=========================================
+*/
+
+setInterval(
+    updateCountdowns,
+    1000
+);
+
+
+</script>
+
+
+</body>
+
+</html><!DOCTYPE html>
+<html lang="ms">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Countdown SPM 2026</title>
+
+
+<!-- Google Fonts -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Pacifico&display=swap"
+rel="stylesheet"
+>
+
+
+<style>
+
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    font-family: "Baloo 2", sans-serif;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 183, 255, 0.78),
+            rgba(76, 0, 255, 0.68),
+            rgba(255, 80, 180, 0.55)
+        ),
+        url("school.jpg") center / cover fixed no-repeat;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   DECORATIVE BACKGROUND
+========================================= */
+
+.background-decoration {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 0;
+}
+
+
+.circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(2px);
+
+    opacity: 0.35;
+
+    animation: float 8s ease-in-out infinite;
+}
+
+
+.circle.one {
+
+    width: 180px;
+    height: 180px;
+
+    background: #ffd93d;
+
+    top: 5%;
+    left: -50px;
+}
+
+
+.circle.two {
+
+    width: 130px;
+    height: 130px;
+
+    background: #ff6bcb;
+
+    top: 30%;
+    right: -30px;
+
+    animation-delay: 1s;
+}
+
+
+.circle.three {
+
+    width: 220px;
+    height: 220px;
+
+    background: #6bffb8;
+
+    bottom: 10%;
+    left: -80px;
+
+    animation-delay: 2s;
+}
+
+
+.circle.four {
+
+    width: 150px;
+    height: 150px;
+
+    background: #ff9f43;
+
+    bottom: 30%;
+    right: -50px;
+
+    animation-delay: 3s;
+}
+
+
+@keyframes float {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-30px)
+            rotate(15deg);
+
+    }
+
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 30px 20px 70px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    animation: fadeDown 1s ease;
+}
+
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   SCHOOL LOGO
+========================================= */
+
+.logo-container {
+
+    width: 145px;
+    height: 145px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+
+        0 10px 30px
+        rgba(0,0,0,0.35),
+
+        0 0 0 6px
+        rgba(255,255,255,0.25);
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+}
+
+
+.logo-container img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+
+@keyframes logoFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* =========================================
+   HEADER TITLE
+========================================= */
+
+.header h1 {
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        clamp(25px, 5vw, 42px);
+
+    line-height: 1.3;
+
+    text-shadow:
+
+        3px 4px 0
+        rgba(0,0,0,0.25),
+
+        0 4px 15px
+        rgba(0,0,0,0.3);
+
+    margin-bottom: 5px;
+}
+
+
+.header h2 {
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        clamp(38px, 7vw, 62px);
+
+    line-height: 1.2;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffe66d,
+            #fff
+        );
+
+    -webkit-background-clip:
+        text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+    filter:
+        drop-shadow(
+            3px 4px 2px
+            rgba(0,0,0,0.35)
+        );
+}
+
+
+/* =========================================
+   SCHEDULE TITLE
+========================================= */
+
+.schedule-title {
+
+    display: inline-block;
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        clamp(27px, 5vw, 40px);
+
+    margin:
+        35px 0 45px;
+
+    padding:
+        8px 25px;
+
+    background:
+        rgba(255,255,255,0.16);
+
+    border-radius:
+        30px;
+
+    border:
+        2px solid
+        rgba(255,255,255,0.5);
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(0,0,0,0.2),
+
+        inset 0 0 20px
+        rgba(255,255,255,0.1);
+
+    text-shadow:
+        3px 3px 3px
+        rgba(0,0,0,0.35);
+}
+
+
+/* =========================================
+   COUNTDOWN SECTION
+========================================= */
+
+.countdown-section {
+
+    margin-bottom: 45px;
+
+    animation:
+        fadeUp 0.8s ease both;
+}
+
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   EXAM TITLES
+========================================= */
+
+.exam-name {
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size:
+        clamp(25px, 5vw, 39px);
+
+    line-height: 1.3;
+
+    margin-bottom: 18px;
+
+    color: white;
+
+    text-shadow:
+
+        3px 3px 0
+        rgba(0,0,0,0.35),
+
+        0 5px 10px
+        rgba(0,0,0,0.3);
+}
+
+
+/* =========================================
+   COUNTDOWN BOX
+========================================= */
+
+.countdown {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    min-height: 120px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    padding: 18px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.17);
+
+    border:
+        2px solid
+        rgba(255,255,255,0.45);
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+
+        0 15px 35px
+        rgba(0,0,0,0.25),
+
+        inset 0 0 25px
+        rgba(255,255,255,0.08);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.countdown:hover {
+
+    transform:
+        translateY(-5px)
+        scale(1.015);
+}
+
+
+/* =========================================
+   TIME NUMBERS
+========================================= */
+
+.time {
+
+    font-size:
+        clamp(30px, 6vw, 55px);
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color: white;
+
+    text-shadow:
+        2px 3px 0
+        rgba(0,0,0,0.25);
+}
+
+
+/* =========================================
+   LABELS
+========================================= */
+
+.label {
+
+    margin-top: 9px;
+
+    font-size:
+        clamp(10px, 2vw, 14px);
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    opacity: 0.95;
+}
+
+
+/* =========================================
+   COUNTDOWN COLOURS
+========================================= */
+
+.countdown-section:nth-of-type(1)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,105,180,0.45),
+            rgba(255,77,109,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(2)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,193,7,0.45),
+            rgba(255,152,0,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(3)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,230,118,0.45),
+            rgba(0,188,212,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(4)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(156,39,176,0.45),
+            rgba(63,81,181,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(5)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(0,188,212,0.45),
+            rgba(3,169,244,0.35)
+        );
+}
+
+
+.countdown-section:nth-of-type(6)
+.countdown {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,87,34,0.45),
+            rgba(233,30,99,0.35)
+        );
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+
+    display: none;
+
+    margin-top: 12px;
+
+    font-family:
+        "Pacifico",
+        cursive;
+
+    font-size: 21px;
+
+    color: #ffe66d;
+
+    text-shadow:
+        2px 2px 3px
+        rgba(0,0,0,0.4);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    margin-top: 60px;
+
+    padding:
+        12px 20px;
+
+    display:
+        inline-block;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    border-radius:
+        30px;
+
+    font-size: 14px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+
+        padding:
+            25px 12px 50px;
+    }
+
+
+    .logo-container {
+
+        width: 110px;
+
+        height: 110px;
+    }
+
+
+    .header h1 {
+
+        font-size: 24px;
+    }
+
+
+    .header h2 {
+
+        font-size: 36px;
+    }
+
+
+    .schedule-title {
+
+        font-size: 26px;
+
+        margin-top: 28px;
+
+        margin-bottom: 35px;
+
+        padding:
+            7px 18px;
+    }
+
+
+    .exam-name {
+
+        font-size: 25px;
+    }
+
+
+    .countdown {
+
+        padding:
+            14px 6px;
+
+        gap: 2px;
+
+        border-radius:
+            20px;
+    }
+
+
+    .time {
+
+        font-size: 28px;
+    }
+
+
+    .label {
+
+        font-size: 9px;
+
+        letter-spacing: 0;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 350px) {
+
+    .time {
+
+        font-size: 23px;
+    }
+
+
+    .exam-name {
+
+        font-size: 22px;
+    }
+
+
+    .header h1 {
+
+        font-size: 21px;
+    }
+
+
+    .header h2 {
+
+        font-size: 31px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     BACKGROUND DECORATION
+========================================= -->
+
+<div class="background-decoration">
+
+    <div class="circle one"></div>
+
+    <div class="circle two"></div>
+
+    <div class="circle three"></div>
+
+    <div class="circle four"></div>
+
+</div>
+
+
+
+<!-- =========================================
+     MAIN CONTAINER
+========================================= -->
+
+<div class="container">
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+
+    <div class="logo-container">
+
+        <img
+            src="logo.png"
+            alt="Logo sekolah"
+        >
+
     </div>
 
 
+    <h1>
 
-    <!-- =========================================
-         COUNTDOWN JAVASCRIPT
-    ========================================= -->
+        Unit Bimbingan Kaunseling
 
-    <script>
+        <br>
 
-        function createCountdown(box) {
+        SMK Saujana Indah
 
-            box.innerHTML = `
+    </h1>
 
-                <div>
-                    <div class="time days">00</div>
-                    <div class="label">HARI</div>
-                </div>
 
-                <div>
-                    <div class="time hours">00</div>
-                    <div class="label">JAM</div>
-                </div>
+    <h2>
 
-                <div>
-                    <div class="time minutes">00</div>
-                    <div class="label">MINIT</div>
-                </div>
+        Countdown SPM 2026
 
-                <div>
-                    <div class="time seconds">00</div>
-                    <div class="label">SAAT</div>
-                </div>
+    </h2>
 
-            `;
 
-        }
+</header>
 
 
 
-        function updateCountdowns() {
+<!-- =========================================
+     SCHEDULE TITLE
+========================================= -->
 
-            document
-                .querySelectorAll(".countdown")
-                .forEach(box => {
+<h2 class="schedule-title">
 
-                    const target =
-                        new Date(box.dataset.date).getTime();
+    Jadual Peperiksaan SPM
 
+</h2>
 
-                    const now =
-                        Date.now();
 
 
-                    /*
-                     * Display the countdown
-                     * one day shorter.
-                     */
+<!-- =========================================
+     BM BERTUTUR
+========================================= -->
 
-                    const difference =
-                        target - now - 86400000;
+<section class="countdown-section">
 
+    <h3 class="exam-name">
 
-                    const status =
-                        box.nextElementSibling;
+        Ujian Bertutur Bahasa Melayu
 
+    </h3>
 
 
-                    /*
-                     * Countdown has reached zero
-                     */
+    <div
+        class="countdown"
+        data-date="2026-10-26T08:00:00+08:00"
+    ></div>
 
-                    if (difference <= 0) {
 
-                        box.querySelector(".days").textContent = "00";
+    <div class="status"></div>
 
-                        box.querySelector(".hours").textContent = "00";
+</section>
 
-                        box.querySelector(".minutes").textContent = "00";
 
-                        box.querySelector(".seconds").textContent = "00";
 
+<!-- =========================================
+     BI BERTUTUR
+========================================= -->
 
-                        status.textContent =
-                            "🎉 Peperiksaan telah bermula!";
+<section class="countdown-section">
 
+    <h3 class="exam-name">
 
-                        status.style.display = "block";
+        Ujian Bertutur Bahasa Inggeris
 
+    </h3>
 
-                        return;
 
-                    }
+    <div
+        class="countdown"
+        data-date="2026-11-02T08:00:00+08:00"
+    ></div>
 
 
+    <div class="status"></div>
 
-                    /*
-                     * Calculate remaining time
-                     */
+</section>
 
-                    const days =
-                        Math.floor(
-                            difference / 86400000
-                        );
 
 
-                    const hours =
-                        Math.floor(
-                            (difference / 3600000) % 24
-                        );
+<!-- =========================================
+     AMALI SAINS
+========================================= -->
 
+<section class="countdown-section">
 
-                    const minutes =
-                        Math.floor(
-                            (difference / 60000) % 60
-                        );
+    <h3 class="exam-name">
 
+        Ujian Amali Sains
 
-                    const seconds =
-                        Math.floor(
-                            (difference / 1000) % 60
-                        );
+    </h3>
 
 
+    <div
+        class="countdown"
+        data-date="2026-11-16T08:05:00+08:00"
+    ></div>
 
-                    /*
-                     * Display countdown
-                     */
 
-                    box.querySelector(".days")
-                        .textContent =
-                        String(days).padStart(2, "0");
+    <div class="status"></div>
 
+</section>
 
-                    box.querySelector(".hours")
-                        .textContent =
-                        String(hours).padStart(2, "0");
 
 
-                    box.querySelector(".minutes")
-                        .textContent =
-                        String(minutes).padStart(2, "0");
+<!-- =========================================
+     BM MENDENGAR
+========================================= -->
 
+<section class="countdown-section">
 
-                    box.querySelector(".seconds")
-                        .textContent =
-                        String(seconds).padStart(2, "0");
+    <h3 class="exam-name">
 
-                });
+        Ujian Mendengar Bahasa Melayu
 
-        }
+    </h3>
 
 
+    <div
+        class="countdown"
+        data-date="2026-11-23T09:00:00+08:00"
+    ></div>
 
-        /*
-         * Create all countdown boxes
-         */
 
-        document
-            .querySelectorAll(".countdown")
-            .forEach(createCountdown);
+    <div class="status"></div>
 
+</section>
 
 
-        /*
-         * Start countdown immediately
-         */
 
-        updateCountdowns();
+<!-- =========================================
+     BI MENDENGAR
+========================================= -->
 
+<section class="countdown-section">
 
+    <h3 class="exam-name">
 
-        /*
-         * Update every second
-         */
+        Ujian Mendengar Bahasa Inggeris
 
-        setInterval(
-            updateCountdowns,
-            1000
-        );
+    </h3>
 
-    </script>
+
+    <div
+        class="countdown"
+        data-date="2026-11-24T09:00:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     WRITTEN EXAMINATION
+========================================= -->
+
+<section class="countdown-section">
+
+    <h3 class="exam-name">
+
+        Peperiksaan Bertulis
+
+    </h3>
+
+
+    <div
+        class="countdown"
+        data-date="2026-11-23T10:45:00+08:00"
+    ></div>
+
+
+    <div class="status"></div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<div class="footer">
+
+    ✨ Semoga berjaya dalam SPM 2026! ✨
+
+</div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     COUNTDOWN JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/*
+=========================================
+CREATE COUNTDOWN BOXES
+=========================================
+*/
+
+function createCountdown(box) {
+
+    box.innerHTML = `
+
+        <div>
+
+            <div class="time days">
+                00
+            </div>
+
+            <div class="label">
+                HARI
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="time hours">
+                00
+            </div>
+
+            <div class="label">
+                JAM
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="time minutes">
+                00
+            </div>
+
+            <div class="label">
+                MINIT
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <div class="time seconds">
+                00
+            </div>
+
+            <div class="label">
+                SAAT
+            </div>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/*
+=========================================
+UPDATE COUNTDOWNS
+=========================================
+*/
+
+function updateCountdowns() {
+
+
+    document
+        .querySelectorAll(".countdown")
+        .forEach(function(box) {
+
+
+            /*
+            Get exam date
+            */
+
+            const target =
+                new Date(
+                    box.dataset.date
+                ).getTime();
+
+
+            /*
+            Get current time
+            */
+
+            const now =
+                Date.now();
+
+
+            /*
+            Subtract exactly one day
+            from the displayed countdown
+            */
+
+            const difference =
+                target -
+                now -
+                86400000;
+
+
+            /*
+            Find status message
+            */
+
+            const status =
+                box.nextElementSibling;
+
+
+
+            /*
+            =====================================
+            EXAM STARTED
+            =====================================
+            */
+
+            if (difference <= 0) {
+
+
+                box.querySelector(".days")
+                    .textContent = "00";
+
+
+                box.querySelector(".hours")
+                    .textContent = "00";
+
+
+                box.querySelector(".minutes")
+                    .textContent = "00";
+
+
+                box.querySelector(".seconds")
+                    .textContent = "00";
+
+
+                status.textContent =
+                    "🎉 Peperiksaan telah bermula!";
+
+
+                status.style.display =
+                    "block";
+
+
+                return;
+
+            }
+
+
+
+            /*
+            =====================================
+            CALCULATE DAYS
+            =====================================
+            */
+
+            const days =
+                Math.floor(
+                    difference /
+                    86400000
+                );
+
+
+
+            /*
+            =====================================
+            CALCULATE HOURS
+            =====================================
+            */
+
+            const hours =
+                Math.floor(
+                    (difference /
+                    3600000) % 24
+                );
+
+
+
+            /*
+            =====================================
+            CALCULATE MINUTES
+            =====================================
+            */
+
+            const minutes =
+                Math.floor(
+                    (difference /
+                    60000) % 60
+                );
+
+
+
+            /*
+            =====================================
+            CALCULATE SECONDS
+            =====================================
+            */
+
+            const seconds =
+                Math.floor(
+                    (difference /
+                    1000) % 60
+                );
+
+
+
+            /*
+            =====================================
+            DISPLAY DAYS
+            =====================================
+            */
+
+            box.querySelector(".days")
+                .textContent =
+                String(days)
+                    .padStart(2, "0");
+
+
+
+            /*
+            =====================================
+            DISPLAY HOURS
+            =====================================
+            */
+
+            box.querySelector(".hours")
+                .textContent =
+                String(hours)
+                    .padStart(2, "0");
+
+
+
+            /*
+            =====================================
+            DISPLAY MINUTES
+            =====================================
+            */
+
+            box.querySelector(".minutes")
+                .textContent =
+                String(minutes)
+                    .padStart(2, "0");
+
+
+
+            /*
+            =====================================
+            DISPLAY SECONDS
+            =====================================
+            */
+
+            box.querySelector(".seconds")
+                .textContent =
+                String(seconds)
+                    .padStart(2, "0");
+
+
+        });
+
+}
+
+
+
+/*
+=========================================
+CREATE ALL COUNTDOWN BOXES
+=========================================
+*/
+
+document
+    .querySelectorAll(".countdown")
+    .forEach(createCountdown);
+
+
+
+/*
+=========================================
+RUN IMMEDIATELY
+=========================================
+*/
+
+updateCountdowns();
+
+
+
+/*
+=========================================
+UPDATE EVERY SECOND
+=========================================
+*/
+
+setInterval(
+    updateCountdowns,
+    1000
+);
+
+
+</script>
 
 
 </body>
